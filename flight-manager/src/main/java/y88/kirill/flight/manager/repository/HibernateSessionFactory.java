@@ -1,7 +1,6 @@
 package y88.kirill.flight.manager.repository;
 
-//import jakarta.annotation.PostConstruct;
-//import jakarta.annotation.PreDestroy;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;

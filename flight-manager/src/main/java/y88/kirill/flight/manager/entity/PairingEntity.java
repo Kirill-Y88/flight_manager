@@ -1,6 +1,7 @@
 package y88.kirill.flight.manager.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
