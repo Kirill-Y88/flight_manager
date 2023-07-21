@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FlightService {
 
-    private final FlightRepository flightRepository;
+   // private final FlightRepository flightRepository;
     private final FlightMapper flightMapper;
     private final FlightRepositoryCustomImpl flightRepositoryCustom;
 
@@ -32,6 +32,12 @@ public class FlightService {
         List<FlightEntity> flightEntities = flights.stream()
                 .map(flightMapper::toFlightEntity)
                 .toList();
+
+        System.out.println("----" + flightEntities.get(0).getFlightNum());
+        System.out.println("----" + flightEntities.get(0).getDateTimeDeparture());
+        System.out.println("----" + flightEntities.get(0).getStationArrival());
+        System.out.println("----" + flightEntities.get(0).getDateTimeArrival());
+        System.out.println("----" + flightEntities.get(0).getStationDeparture());
 
         flightRepositoryCustom.saveAllFlights(flightEntities);
 

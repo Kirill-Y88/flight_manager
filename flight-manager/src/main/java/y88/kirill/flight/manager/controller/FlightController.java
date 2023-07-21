@@ -9,7 +9,7 @@ import y88.kirill.flight.manager.dto.request.fight.FlightRequestDto;
 import y88.kirill.flight.manager.service.FlightService;
 
 @RestController
-@RequestMapping("api/v1/flights")
+@RequestMapping("/api/v1/flights")
 @RequiredArgsConstructor
 public class FlightController {
 

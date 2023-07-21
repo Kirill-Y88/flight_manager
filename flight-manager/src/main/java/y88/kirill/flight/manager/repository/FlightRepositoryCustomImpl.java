@@ -2,9 +2,11 @@ package y88.kirill.flight.manager.repository;
 
 
 import lombok.RequiredArgsConstructor;
+//import org.hibernate.StatelessSession;
+import org.hibernate.Session;
 import org.hibernate.StatelessSession;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 import y88.kirill.flight.manager.entity.FlightEntity;
 
 import java.util.List;
@@ -13,19 +15,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FlightRepositoryCustomImpl {
 
-    private final StatelessSession statelessSession;
+    private final HibernateSessionFactory hibernateSessionFactory;
 
 
-    public void saveAllFlights(List<FlightEntity> flights){
-        statelessSession.getTransaction().begin();
+    public void saveAllFlights(List<FlightEntity> flights) {
 
-        for (FlightEntity flight : flights) {
-            statelessSession.insert(flight);
+        try (StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()) {
+
+            statelessSession.getTransaction().begin();
+
+            for (FlightEntity flight : flights) {
+                statelessSession.insert(flight);
+            }
+            statelessSession.getTransaction().commit();
         }
-
-        statelessSession.getTransaction().commit();
-
     }
-
 
 }

@@ -8,7 +8,7 @@ CREATE TABLE "assignment"
 
 CREATE TABLE "flight"
 (
-    "id"                  BIGSERIAL PRIMARY KEY,
+    "id"                  BIGINT PRIMARY KEY,
     "flight_num"          INTEGER     NOT NULL,
     "station_departure"   VARCHAR(10) NOT NULL,
     "station_arrival"     VARCHAR(10) NOT NULL,
