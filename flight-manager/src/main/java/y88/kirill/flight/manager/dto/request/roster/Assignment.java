@@ -12,7 +12,7 @@ public class Assignment{
     @JsonProperty("PairingIBMID") 
     public String pairingIBMID;
     @JsonProperty("PairingID") 
-    public int pairingID;
+    public long pairingID;
     @JsonProperty("Station") 
     public String station;
     @JsonProperty("DateTimeStart") 

@@ -2,13 +2,19 @@ package y88.kirill.flight.manager.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "duty")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DutyEntity {
 
     @Id
@@ -24,5 +30,8 @@ public class DutyEntity {
     @ManyToOne
     @JoinColumn(name = "pairing_id")
     private PairingEntity pairing;
+
+    @OneToMany(mappedBy = "duty")
+    private List<LegEntity> legEntities;
 
 }

@@ -23,7 +23,6 @@ import lombok.Setter;
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "gender")

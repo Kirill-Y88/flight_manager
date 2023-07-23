@@ -3,6 +3,8 @@ package y88.kirill.flight.manager.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +14,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "leg")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class LegEntity {
 
     @Id

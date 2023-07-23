@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "flight")
 @Getter
@@ -40,6 +42,12 @@ public class FlightEntity {
 
     @Column(name = "date_time_arrival")
     private String dateTimeArrival;
+
+    @ManyToMany
+    @JoinTable(name = "paring_flight",
+    joinColumns = @JoinColumn(name = "flight_id"),
+    inverseJoinColumns = @JoinColumn(name = "paring_id"))
+    private List<PairingEntity> pairingEntities;
 
 
 }
