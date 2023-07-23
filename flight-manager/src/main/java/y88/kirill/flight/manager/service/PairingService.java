@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import y88.kirill.flight.manager.dto.request.roster.Pairing;
@@ -18,7 +17,7 @@ public class PairingService {
     private final PairingMapper pairingMapper;
     private final PairingRepository pairingRepository;
 
-    public void savePairing(List<Pairing> pairings){
+    public void savePairing(List<Pairing> pairings) {
 
         List<PairingEntity> pairingEntities = pairings.stream()
                 .map(pairingMapper::toPairingEntity)
@@ -28,13 +27,9 @@ public class PairingService {
 
     }
 
-    public List<PairingDto> findAllPairingsByEmployee(Long employeeId){
+    public List<PairingDto> findAllPairingsByEmployee(Long employeeId) {
         return pairingRepository.findAllPairingsByEmployee(employeeId).stream()
                 .map(pairingMapper::toDto)
                 .toList();
     }
-
-
-
-
 }

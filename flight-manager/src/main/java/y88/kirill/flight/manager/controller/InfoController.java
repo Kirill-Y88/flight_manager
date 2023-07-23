@@ -54,5 +54,4 @@ public class InfoController {
         entities = provider.findCandidateComponents("y88.kirill.flight.manager.entity");
     }
 
-
 }

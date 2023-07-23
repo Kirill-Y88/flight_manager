@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import y88.kirill.flight.manager.dto.request.fight.Flight;
@@ -30,5 +29,4 @@ public class FlightService {
                 .map(flightMapper::toDto)
                 .toList();
     }
-
 }

@@ -20,7 +20,6 @@ public class FlightController {
         flightService.saveFlights(flightRequestDto.flights);
     }
 
-
     @GetMapping("/{id}")
     public List<FlightDto> findAllFlightsByEmployee(@PathVariable Long id){
         return flightService.findAllFlightByEmployee(id);

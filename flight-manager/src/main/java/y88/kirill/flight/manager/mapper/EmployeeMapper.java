@@ -7,15 +7,12 @@ import y88.kirill.flight.manager.entity.EmployeeEntity;
 @Component
 public class EmployeeMapper {
 
-
-
-    public EmployeeEntity toEmployeeEntity(Employee employee){
+    public EmployeeEntity toEmployeeEntity(Employee employee) {
         return EmployeeEntity.builder()
-                .id(Long.valueOf( employee.iD))
+                .id(Long.valueOf(employee.iD))
                 .gender(employee.gender)
                 .fleet(employee.fleet)
                 .build();
     }
-
 
 }

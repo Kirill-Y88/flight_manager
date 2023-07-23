@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.repository;
 
-
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
@@ -25,7 +24,6 @@ public class HibernateSessionFactory {
     public void closeFactory(){
         factory.close();
     }
-
 
     public SessionFactory getFactory() {
         return factory;

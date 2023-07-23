@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import y88.kirill.flight.manager.dto.request.roster.Assignment;
@@ -25,8 +24,6 @@ public class AssignmentService {
                 .toList();
 
         assignmentRepository.saveAllAssignment(assignmentEntities);
-
     }
-
 
 }

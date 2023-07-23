@@ -18,7 +18,6 @@ public class PairingController {
     private final PairingService pairingService;
     private final AssignmentService assignmentService;
 
-
     @PostMapping
     public void uploadPairings(@RequestBody RosterRequestDto requestDto){
         pairingService.savePairing(requestDto.pairings);
@@ -29,6 +28,5 @@ public class PairingController {
     public List<PairingDto> findAllPairingByEmployee(@PathVariable Long id){
         return pairingService.findAllPairingsByEmployee(id);
     }
-
 
 }

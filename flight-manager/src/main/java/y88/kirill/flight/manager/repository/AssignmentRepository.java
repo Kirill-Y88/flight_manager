@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.repository;
 
-//import org.springframework.data.jpa.repository.JpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.StatelessSession;
 import org.springframework.stereotype.Repository;
@@ -14,9 +13,9 @@ public class AssignmentRepository {
 
     private final HibernateSessionFactory hibernateSessionFactory;
 
-    public void saveAllAssignment(List<AssignmentEntity> assignmentEntities){
+    public void saveAllAssignment(List<AssignmentEntity> assignmentEntities) {
 
-        try(StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()) {
+        try (StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()) {
 
             statelessSession.getTransaction().begin();
 
@@ -26,11 +25,6 @@ public class AssignmentRepository {
 
             statelessSession.getTransaction().commit();
         }
-
     }
-
-
-
-
 
 }

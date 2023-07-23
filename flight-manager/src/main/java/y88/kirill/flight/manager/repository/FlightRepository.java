@@ -1,12 +1,8 @@
 package y88.kirill.flight.manager.repository;
 
-
 import lombok.RequiredArgsConstructor;
-//import org.hibernate.StatelessSession;
-import org.hibernate.Session;
 import org.hibernate.StatelessSession;
 import org.springframework.stereotype.Repository;
-//import org.springframework.transaction.annotation.Transactional;
 import y88.kirill.flight.manager.entity.FlightEntity;
 
 import java.util.List;
@@ -16,7 +12,6 @@ import java.util.List;
 public class FlightRepository {
 
     private final HibernateSessionFactory hibernateSessionFactory;
-
 
     public void saveAllFlights(List<FlightEntity> flights) {
 
@@ -31,7 +26,7 @@ public class FlightRepository {
         }
     }
 
-    public List<FlightEntity> findAllFlightByEmployee(Long employeeId){
+    public List<FlightEntity> findAllFlightByEmployee(Long employeeId) {
 
         try (StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()) {
 
@@ -49,12 +44,8 @@ public class FlightRepository {
                     .getResultList();
 
             statelessSession.getTransaction().commit();
-
             return flightEntities;
         }
-
     }
-
-
 
 }

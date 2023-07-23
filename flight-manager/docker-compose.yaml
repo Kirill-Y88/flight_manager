@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:10
+    domainname: eventmanagerpostgres
+    container_name: eventmanagerpostgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1917
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-U", "postgres" ]
+      interval: 5s
+      timeout: 1s
+      retries: 2
+  service:
+    build:
+      context: ./
+    ports:
+      - "8088:8089"
+    depends_on:
+      - postgres
+    environment:
+      - SERVER_PORT= 8088

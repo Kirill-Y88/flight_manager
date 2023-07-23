@@ -8,7 +8,7 @@ import y88.kirill.flight.manager.entity.FlightEntity;
 @Component
 public class FlightMapper {
 
-    public FlightDto toDto(FlightEntity entity){
+    public FlightDto toDto(FlightEntity entity) {
 
         return FlightDto.builder()
                 .id(entity.getId())
@@ -20,7 +20,7 @@ public class FlightMapper {
                 .build();
     }
 
-    public FlightEntity toFlightEntity(Flight flight){
+    public FlightEntity toFlightEntity(Flight flight) {
 
         return FlightEntity.builder()
                 .id(Long.valueOf(flight.iD))
@@ -30,7 +30,6 @@ public class FlightMapper {
                 .dateTimeDeparture(flight.dateTimeDeparture)
                 .dateTimeArrival(flight.dateTimeArrival)
                 .build();
-
     }
 
 }

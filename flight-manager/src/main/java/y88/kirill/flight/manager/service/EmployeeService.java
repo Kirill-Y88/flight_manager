@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import y88.kirill.flight.manager.dto.request.employee.Employee;
@@ -25,11 +24,5 @@ public class EmployeeService {
                 .toList();
 
         employeeRepository.saveAllEmployees(employeeEntities);
-
     }
-
-
-
-
-
 }

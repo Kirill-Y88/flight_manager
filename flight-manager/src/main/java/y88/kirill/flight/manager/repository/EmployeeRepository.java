@@ -1,6 +1,5 @@
 package y88.kirill.flight.manager.repository;
 
-
 import lombok.RequiredArgsConstructor;
 import org.hibernate.StatelessSession;
 import org.springframework.stereotype.Repository;
@@ -14,9 +13,9 @@ public class EmployeeRepository {
 
     private final HibernateSessionFactory hibernateSessionFactory;
 
-    public void saveAllEmployees(List<EmployeeEntity> employees){
+    public void saveAllEmployees(List<EmployeeEntity> employees) {
 
-        try (StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()){
+        try (StatelessSession statelessSession = hibernateSessionFactory.getFactory().openStatelessSession()) {
 
             statelessSession.getTransaction().begin();
 
@@ -26,8 +25,6 @@ public class EmployeeRepository {
             statelessSession.getTransaction().commit();
 
         }
-
     }
-
 
 }

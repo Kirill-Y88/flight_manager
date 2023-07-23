@@ -1,7 +1,5 @@
 package y88.kirill.flight.manager.entity;
 
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,9 +26,7 @@ public class AssignmentEntity {
     @JoinColumn(name = "pairing_id")
     private PairingEntity pairing;
 
-
     @Column(name = "rank")
     private String rank;
-
 
 }
